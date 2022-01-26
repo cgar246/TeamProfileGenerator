@@ -6,8 +6,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 
-const generatePage = require("./utils/team.js");
-const writeFile = require('./utils/generate-page.js');
+const generatePage = require("./source/t");
+const writeFile = require('./source/Generation');
 
 const teamMembers = []
 
