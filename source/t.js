@@ -38,7 +38,7 @@ function generateCards(teamPrompts){
     let cardHTML = '';
     
     for (i=0; i < teamPrompts.length; i++){
-        let teamMember  = teamPrompts[i];
+    let teamMember  = teamPrompts[i];
         cardHTML = cardHTML + `
         <div class="card mx-auto shadow p-3 mb-5 bg-white" style="width: 18rem;">
         <div class="card-header text-white" style="background-color: #4375f3;">
@@ -46,8 +46,8 @@ function generateCards(teamPrompts){
         <p class="card-text">${teamMember.getIcon()} ${teamMember.getRole()}</p>
         </div>
         <ul class="list-group list-group-flush">
-            <li class="list-group-item">ID: ${teamMember.id}</li>
-            <li class="list-group-item">Email: <a href="mailto:${teamMember.email}">${teamMember.email}</a></li>`;
+        <li class="list-group-item">ID: ${teamMember.id}</li>
+        <li class="list-group-item">Email: <a href="mailto:${teamMember.email}">${teamMember.email}</a></li>`;
 
         if (teamMember.getRole() === "Manager"){
         cardHTML = cardHTML + `

@@ -6,8 +6,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 
 
-const generatePage = require("./source/t");
-const writeFile = require('./source/Generation');
+const generatePage = require("./utils/team.js");
+const writeFile = require('./utils/generate-page.js');
 
 const teamMembers = []
 
@@ -36,7 +36,7 @@ const promptManager = () => {
     },
     ])
     .then((answers) => {
-    const manager = new Manager (answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber)
+        const manager = new Manager (answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber)
         teamMembers.push(manager)
         console.log(answers);
         promptMenu();
@@ -44,7 +44,7 @@ const promptManager = () => {
 };
 
 const promptMenu = () => {
-    inquirer
+inquirer
     .prompt([
     {
         type: "list",
@@ -55,10 +55,10 @@ const promptMenu = () => {
             "Add an intern.",
             "Finish building team.",
         ],
-        },
+    },
     ])
     .then((answers) => {
-        if (answers.menu === "Add an engineer.") {
+    if (answers.menu === "Add an engineer.") {
         promptEngineer();
     } else if (answers.menu === "Add an intern.") {
         promptIntern();
@@ -70,28 +70,28 @@ const promptMenu = () => {
 };
 
 const promptEngineer = () => {
-    inquirer
+inquirer
     .prompt([
-        {
+    {
         type: "input",
         name: "engineerName",
         message: "What is the engineer's name?",
-        },
-        {
+    },
+    {
         type: "input",
         name: "engineerID",
         message: "What is the engineer's employee ID?",
-        },
-        {
+    },
+    {
         type: "input",
         name: "engineerEmail",
         message: "What is the engineer's email address?",
-        },
-        {
+    },
+    {
         type: "input",
         name: "engineerGitHub",
         message:
-        "What is the engineer's GitHub username? (please leave out the @ symbol)",
+            "What is the engineer's GitHub username? (please leave out the @ symbol)",
         },
     ])
     .then((answers) => {
@@ -103,9 +103,9 @@ const promptEngineer = () => {
 };
 
 const promptIntern = () => {
-    inquirer
+inquirer
     .prompt([
-        {
+    {
         type: "input",
         name: "internName",
         message: "What is the intern's name?",
@@ -114,8 +114,8 @@ const promptIntern = () => {
         type: "input",
         name: "internID",
         message: "What is the intern's employee ID?",
-        },
-        {
+    },
+    {
         type: "input",
         name: "internEmail",
         message: "What is the intern's email address?",
@@ -136,11 +136,11 @@ const promptIntern = () => {
 
 // write to html file
 const writeToFile = () => {
-    fs.writeFile("index.html", generatePage(teamMembers), function (err) {
+fs.writeFile("index.html", generatePage(teamMembers), function (err) {
     if (err) {
-        console.log(err);
+    console.log(err);
     } else {
-        console.log(
+    console.log(
         "Your webpage has been created! Go to index.html and open in browser to check it out!"
     );
     }
@@ -150,6 +150,7 @@ const writeToFile = () => {
 // initialize app here
 const init = () => {
     promptManager();
+
 };
 
 init();
