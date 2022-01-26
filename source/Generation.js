@@ -3,9 +3,9 @@ const fs = require('fs');
 // writing files
 const writeFile = fileContent => {
   //console.log(fileContent)
-    return new Promise((resolve, reject) => {
+return new Promise((resolve, reject) => {
     fs.writeFile('./dist/index.html', fileContent, err => {
-        if (err) {
+    if (err) {
         reject(err);
         return;
     }
@@ -13,7 +13,7 @@ const writeFile = fileContent => {
     resolve({
         ok: true,
         message: 'File created!'
-        });
+    });
     });
 });
 };

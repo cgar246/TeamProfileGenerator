@@ -5,7 +5,7 @@ This is a Node.js command-line application that takes in information about emplo
 Installation
 To install all the dependencies, use the command below:
 
-npm i
+npm install
 
 Usage
 As a manager of a team, you would enjoy using this application to generate a webpage that displays your team's basic information so that you can quickly access their emails and GitHub profiles

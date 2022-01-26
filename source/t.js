@@ -38,7 +38,7 @@ function generateCards(teamPrompts){
     let cardHTML = '';
     
     for (i=0; i < teamPrompts.length; i++){
-    let teamMember  = teamPrompts[i];
+        let teamMember  = teamPrompts[i];
         cardHTML = cardHTML + `
         <div class="card mx-auto shadow p-3 mb-5 bg-white" style="width: 18rem;">
         <div class="card-header text-white" style="background-color: #4375f3;">
